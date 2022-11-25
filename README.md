@@ -2,7 +2,11 @@
 
 部署：Ascend。ms1.9 +pip-requirements.txt
 
-npu_id可在inclearn/ __main__.py line61进行指定，数据集路径可在inclearn/ __main__.py line76进行指定，其他地方无需修改
+npu_id可在inclearn/ __main__.py line61进行指定，数据集路径可在inclearn/ __main__.py line76进行指定，其他地方无需修改。
+
+数据集：
+链接：https://pan.baidu.com/s/1CYbzWU9CnYV0BbMwxq3NMw?pwd=1a7x 
+提取码：1a7x
 
 
 
