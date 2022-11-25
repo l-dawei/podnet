@@ -1,0 +1,290 @@
+# [No.1] construct_wrapper.1
+# In file D:/file/HW/code/MindSpore/inclearn/convnet/my_resnet.py(302)/    def construct(self, x):/
+funcgraph fg_1(
+        %para1 : Tensor(F32)[3, 3, 224, 224]    # x
+        , %para2 : Ref[Tensor(F32)][16, 3, 3, 3]    # conv_1_3x3.weight
+        , %para3 : Ref[Tensor(F32)][64, 64, 3, 3]    # stage_4.conv_b.weight
+        , %para4 : Ref[Tensor(F32)][16]    # bn_1.gamma
+        , %para5 : Ref[Tensor(F32)][16]    # bn_1.beta
+        , %para6 : Ref[Tensor(F32)][16]    # bn_1.moving_mean
+        , %para7 : Ref[Tensor(F32)][16]    # bn_1.moving_variance
+        , %para8 : Ref[Tensor(F32)][64]    # stage_4.bn_b.gamma
+        , %para9 : Ref[Tensor(F32)][64]    # stage_4.bn_b.beta
+        , %para10 : Ref[Tensor(F32)][64]    # stage_4.bn_b.moving_mean
+        , %para11 : Ref[Tensor(F32)][64]    # stage_4.bn_b.moving_variance
+        , %para12 : Ref[Tensor(F32)][64, 64, 3, 3]    # stage_4.conv_a.weight
+        , %para13 : Ref[Tensor(F32)][64]    # stage_4.bn_a.gamma
+        , %para14 : Ref[Tensor(F32)][64]    # stage_4.bn_a.beta
+        , %para15 : Ref[Tensor(F32)][64]    # stage_4.bn_a.moving_mean
+        , %para16 : Ref[Tensor(F32)][64]    # stage_4.bn_a.moving_variance
+        , %para17 : Ref[Tensor(F32)][64, 64, 3, 3]    # stage_3.blocks.0.conv_b.weight
+        , %para18 : Ref[Tensor(F32)][64, 64, 3, 3]    # stage_3.blocks.1.conv_b.weight
+        , %para19 : Ref[Tensor(F32)][64, 64, 3, 3]    # stage_3.blocks.2.conv_b.weight
+        , %para20 : Ref[Tensor(F32)][64, 64, 3, 3]    # stage_3.blocks.3.conv_b.weight
+        , %para21 : Ref[Tensor(F32)][16, 16, 3, 3]    # stage_1.blocks.0.conv_b.weight
+        , %para22 : Ref[Tensor(F32)][16, 16, 3, 3]    # stage_1.blocks.1.conv_b.weight
+        , %para23 : Ref[Tensor(F32)][16, 16, 3, 3]    # stage_1.blocks.2.conv_b.weight
+        , %para24 : Ref[Tensor(F32)][16, 16, 3, 3]    # stage_1.blocks.3.conv_b.weight
+        , %para25 : Ref[Tensor(F32)][16, 16, 3, 3]    # stage_1.blocks.4.conv_b.weight
+        , %para26 : Ref[Tensor(F32)][32, 32, 3, 3]    # stage_2.blocks.0.conv_b.weight
+        , %para27 : Ref[Tensor(F32)][32, 32, 3, 3]    # stage_2.blocks.1.conv_b.weight
+        , %para28 : Ref[Tensor(F32)][32, 32, 3, 3]    # stage_2.blocks.2.conv_b.weight
+        , %para29 : Ref[Tensor(F32)][32, 32, 3, 3]    # stage_2.blocks.3.conv_b.weight
+        , %para30 : Ref[Tensor(F32)][32, 32, 3, 3]    # stage_2.blocks.4.conv_b.weight
+        , %para31 : Ref[Tensor(F32)][64]    # stage_3.blocks.0.bn_b.gamma
+        , %para32 : Ref[Tensor(F32)][64]    # stage_3.blocks.0.bn_b.beta
+        , %para33 : Ref[Tensor(F32)][64]    # stage_3.blocks.0.bn_b.moving_mean
+        , %para34 : Ref[Tensor(F32)][64]    # stage_3.blocks.0.bn_b.moving_variance
+        , %para35 : Ref[Tensor(F32)][64, 32, 3, 3]    # stage_3.blocks.0.conv_a.weight
+        , %para36 : Ref[Tensor(F32)][64]    # stage_3.blocks.1.bn_b.gamma
+        , %para37 : Ref[Tensor(F32)][64]    # stage_3.blocks.1.bn_b.beta
+        , %para38 : Ref[Tensor(F32)][64]    # stage_3.blocks.1.bn_b.moving_mean
+        , %para39 : Ref[Tensor(F32)][64]    # stage_3.blocks.1.bn_b.moving_variance
+        , %para40 : Ref[Tensor(F32)][64, 64, 3, 3]    # stage_3.blocks.1.conv_a.weight
+        , %para41 : Ref[Tensor(F32)][64]    # stage_3.blocks.2.bn_b.gamma
+        , %para42 : Ref[Tensor(F32)][64]    # stage_3.blocks.2.bn_b.beta
+        , %para43 : Ref[Tensor(F32)][64]    # stage_3.blocks.2.bn_b.moving_mean
+        , %para44 : Ref[Tensor(F32)][64]    # stage_3.blocks.2.bn_b.moving_variance
+        , %para45 : Ref[Tensor(F32)][64, 64, 3, 3]    # stage_3.blocks.2.conv_a.weight
+        , %para46 : Ref[Tensor(F32)][64]    # stage_3.blocks.3.bn_b.gamma
+        , %para47 : Ref[Tensor(F32)][64]    # stage_3.blocks.3.bn_b.beta
+        , %para48 : Ref[Tensor(F32)][64]    # stage_3.blocks.3.bn_b.moving_mean
+        , %para49 : Ref[Tensor(F32)][64]    # stage_3.blocks.3.bn_b.moving_variance
+        , %para50 : Ref[Tensor(F32)][64, 64, 3, 3]    # stage_3.blocks.3.conv_a.weight
+        , %para51 : Ref[Tensor(F32)][16]    # stage_1.blocks.0.bn_b.gamma
+        , %para52 : Ref[Tensor(F32)][16]    # stage_1.blocks.0.bn_b.beta
+        , %para53 : Ref[Tensor(F32)][16]    # stage_1.blocks.0.bn_b.moving_mean
+        , %para54 : Ref[Tensor(F32)][16]    # stage_1.blocks.0.bn_b.moving_variance
+        , %para55 : Ref[Tensor(F32)][16, 16, 3, 3]    # stage_1.blocks.0.conv_a.weight
+        , %para56 : Ref[Tensor(F32)][16]    # stage_1.blocks.1.bn_b.gamma
+        , %para57 : Ref[Tensor(F32)][16]    # stage_1.blocks.1.bn_b.beta
+        , %para58 : Ref[Tensor(F32)][16]    # stage_1.blocks.1.bn_b.moving_mean
+        , %para59 : Ref[Tensor(F32)][16]    # stage_1.blocks.1.bn_b.moving_variance
+        , %para60 : Ref[Tensor(F32)][16, 16, 3, 3]    # stage_1.blocks.1.conv_a.weight
+        , %para61 : Ref[Tensor(F32)][16]    # stage_1.blocks.2.bn_b.gamma
+        , %para62 : Ref[Tensor(F32)][16]    # stage_1.blocks.2.bn_b.beta
+        , %para63 : Ref[Tensor(F32)][16]    # stage_1.blocks.2.bn_b.moving_mean
+        , %para64 : Ref[Tensor(F32)][16]    # stage_1.blocks.2.bn_b.moving_variance
+        , %para65 : Ref[Tensor(F32)][16, 16, 3, 3]    # stage_1.blocks.2.conv_a.weight
+        , %para66 : Ref[Tensor(F32)][16]    # stage_1.blocks.3.bn_b.gamma
+        , %para67 : Ref[Tensor(F32)][16]    # stage_1.blocks.3.bn_b.beta
+        , %para68 : Ref[Tensor(F32)][16]    # stage_1.blocks.3.bn_b.moving_mean
+        , %para69 : Ref[Tensor(F32)][16]    # stage_1.blocks.3.bn_b.moving_variance
+        , %para70 : Ref[Tensor(F32)][16, 16, 3, 3]    # stage_1.blocks.3.conv_a.weight
+        , %para71 : Ref[Tensor(F32)][16]    # stage_1.blocks.4.bn_b.gamma
+        , %para72 : Ref[Tensor(F32)][16]    # stage_1.blocks.4.bn_b.beta
+        , %para73 : Ref[Tensor(F32)][16]    # stage_1.blocks.4.bn_b.moving_mean
+        , %para74 : Ref[Tensor(F32)][16]    # stage_1.blocks.4.bn_b.moving_variance
+        , %para75 : Ref[Tensor(F32)][16, 16, 3, 3]    # stage_1.blocks.4.conv_a.weight
+        , %para76 : Ref[Tensor(F32)][32]    # stage_2.blocks.0.bn_b.gamma
+        , %para77 : Ref[Tensor(F32)][32]    # stage_2.blocks.0.bn_b.beta
+        , %para78 : Ref[Tensor(F32)][32]    # stage_2.blocks.0.bn_b.moving_mean
+        , %para79 : Ref[Tensor(F32)][32]    # stage_2.blocks.0.bn_b.moving_variance
+        , %para80 : Ref[Tensor(F32)][32, 16, 3, 3]    # stage_2.blocks.0.conv_a.weight
+        , %para81 : Ref[Tensor(F32)][32]    # stage_2.blocks.1.bn_b.gamma
+        , %para82 : Ref[Tensor(F32)][32]    # stage_2.blocks.1.bn_b.beta
+        , %para83 : Ref[Tensor(F32)][32]    # stage_2.blocks.1.bn_b.moving_mean
+        , %para84 : Ref[Tensor(F32)][32]    # stage_2.blocks.1.bn_b.moving_variance
+        , %para85 : Ref[Tensor(F32)][32, 32, 3, 3]    # stage_2.blocks.1.conv_a.weight
+        , %para86 : Ref[Tensor(F32)][32]    # stage_2.blocks.2.bn_b.gamma
+        , %para87 : Ref[Tensor(F32)][32]    # stage_2.blocks.2.bn_b.beta
+        , %para88 : Ref[Tensor(F32)][32]    # stage_2.blocks.2.bn_b.moving_mean
+        , %para89 : Ref[Tensor(F32)][32]    # stage_2.blocks.2.bn_b.moving_variance
+        , %para90 : Ref[Tensor(F32)][32, 32, 3, 3]    # stage_2.blocks.2.conv_a.weight
+        , %para91 : Ref[Tensor(F32)][32]    # stage_2.blocks.3.bn_b.gamma
+        , %para92 : Ref[Tensor(F32)][32]    # stage_2.blocks.3.bn_b.beta
+        , %para93 : Ref[Tensor(F32)][32]    # stage_2.blocks.3.bn_b.moving_mean
+        , %para94 : Ref[Tensor(F32)][32]    # stage_2.blocks.3.bn_b.moving_variance
+        , %para95 : Ref[Tensor(F32)][32, 32, 3, 3]    # stage_2.blocks.3.conv_a.weight
+        , %para96 : Ref[Tensor(F32)][32]    # stage_2.blocks.4.bn_b.gamma
+        , %para97 : Ref[Tensor(F32)][32]    # stage_2.blocks.4.bn_b.beta
+        , %para98 : Ref[Tensor(F32)][32]    # stage_2.blocks.4.bn_b.moving_mean
+        , %para99 : Ref[Tensor(F32)][32]    # stage_2.blocks.4.bn_b.moving_variance
+        , %para100 : Ref[Tensor(F32)][32, 32, 3, 3]    # stage_2.blocks.4.conv_a.weight
+        , %para101 : Ref[Tensor(F32)][64]    # stage_3.blocks.0.bn_a.gamma
+        , %para102 : Ref[Tensor(F32)][64]    # stage_3.blocks.0.bn_a.beta
+        , %para103 : Ref[Tensor(F32)][64]    # stage_3.blocks.0.bn_a.moving_mean
+        , %para104 : Ref[Tensor(F32)][64]    # stage_3.blocks.0.bn_a.moving_variance
+        , %para105 : Ref[Tensor(F32)][64]    # stage_3.blocks.1.bn_a.gamma
+        , %para106 : Ref[Tensor(F32)][64]    # stage_3.blocks.1.bn_a.beta
+        , %para107 : Ref[Tensor(F32)][64]    # stage_3.blocks.1.bn_a.moving_mean
+        , %para108 : Ref[Tensor(F32)][64]    # stage_3.blocks.1.bn_a.moving_variance
+        , %para109 : Ref[Tensor(F32)][64]    # stage_3.blocks.2.bn_a.gamma
+        , %para110 : Ref[Tensor(F32)][64]    # stage_3.blocks.2.bn_a.beta
+        , %para111 : Ref[Tensor(F32)][64]    # stage_3.blocks.2.bn_a.moving_mean
+        , %para112 : Ref[Tensor(F32)][64]    # stage_3.blocks.2.bn_a.moving_variance
+        , %para113 : Ref[Tensor(F32)][64]    # stage_3.blocks.3.bn_a.gamma
+        , %para114 : Ref[Tensor(F32)][64]    # stage_3.blocks.3.bn_a.beta
+        , %para115 : Ref[Tensor(F32)][64]    # stage_3.blocks.3.bn_a.moving_mean
+        , %para116 : Ref[Tensor(F32)][64]    # stage_3.blocks.3.bn_a.moving_variance
+        , %para117 : Ref[Tensor(F32)][16]    # stage_1.blocks.0.bn_a.gamma
+        , %para118 : Ref[Tensor(F32)][16]    # stage_1.blocks.0.bn_a.beta
+        , %para119 : Ref[Tensor(F32)][16]    # stage_1.blocks.0.bn_a.moving_mean
+        , %para120 : Ref[Tensor(F32)][16]    # stage_1.blocks.0.bn_a.moving_variance
+        , %para121 : Ref[Tensor(F32)][16]    # stage_1.blocks.1.bn_a.gamma
+        , %para122 : Ref[Tensor(F32)][16]    # stage_1.blocks.1.bn_a.beta
+        , %para123 : Ref[Tensor(F32)][16]    # stage_1.blocks.1.bn_a.moving_mean
+        , %para124 : Ref[Tensor(F32)][16]    # stage_1.blocks.1.bn_a.moving_variance
+        , %para125 : Ref[Tensor(F32)][16]    # stage_1.blocks.2.bn_a.gamma
+        , %para126 : Ref[Tensor(F32)][16]    # stage_1.blocks.2.bn_a.beta
+        , %para127 : Ref[Tensor(F32)][16]    # stage_1.blocks.2.bn_a.moving_mean
+        , %para128 : Ref[Tensor(F32)][16]    # stage_1.blocks.2.bn_a.moving_variance
+        , %para129 : Ref[Tensor(F32)][16]    # stage_1.blocks.3.bn_a.gamma
+        , %para130 : Ref[Tensor(F32)][16]    # stage_1.blocks.3.bn_a.beta
+        , %para131 : Ref[Tensor(F32)][16]    # stage_1.blocks.3.bn_a.moving_mean
+        , %para132 : Ref[Tensor(F32)][16]    # stage_1.blocks.3.bn_a.moving_variance
+        , %para133 : Ref[Tensor(F32)][16]    # stage_1.blocks.4.bn_a.gamma
+        , %para134 : Ref[Tensor(F32)][16]    # stage_1.blocks.4.bn_a.beta
+        , %para135 : Ref[Tensor(F32)][16]    # stage_1.blocks.4.bn_a.moving_mean
+        , %para136 : Ref[Tensor(F32)][16]    # stage_1.blocks.4.bn_a.moving_variance
+        , %para137 : Ref[Tensor(F32)][32]    # stage_2.blocks.0.bn_a.gamma
+        , %para138 : Ref[Tensor(F32)][32]    # stage_2.blocks.0.bn_a.beta
+        , %para139 : Ref[Tensor(F32)][32]    # stage_2.blocks.0.bn_a.moving_mean
+        , %para140 : Ref[Tensor(F32)][32]    # stage_2.blocks.0.bn_a.moving_variance
+        , %para141 : Ref[Tensor(F32)][32]    # stage_2.blocks.1.bn_a.gamma
+        , %para142 : Ref[Tensor(F32)][32]    # stage_2.blocks.1.bn_a.beta
+        , %para143 : Ref[Tensor(F32)][32]    # stage_2.blocks.1.bn_a.moving_mean
+        , %para144 : Ref[Tensor(F32)][32]    # stage_2.blocks.1.bn_a.moving_variance
+        , %para145 : Ref[Tensor(F32)][32]    # stage_2.blocks.2.bn_a.gamma
+        , %para146 : Ref[Tensor(F32)][32]    # stage_2.blocks.2.bn_a.beta
+        , %para147 : Ref[Tensor(F32)][32]    # stage_2.blocks.2.bn_a.moving_mean
+        , %para148 : Ref[Tensor(F32)][32]    # stage_2.blocks.2.bn_a.moving_variance
+        , %para149 : Ref[Tensor(F32)][32]    # stage_2.blocks.3.bn_a.gamma
+        , %para150 : Ref[Tensor(F32)][32]    # stage_2.blocks.3.bn_a.beta
+        , %para151 : Ref[Tensor(F32)][32]    # stage_2.blocks.3.bn_a.moving_mean
+        , %para152 : Ref[Tensor(F32)][32]    # stage_2.blocks.3.bn_a.moving_variance
+        , %para153 : Ref[Tensor(F32)][32]    # stage_2.blocks.4.bn_a.gamma
+        , %para154 : Ref[Tensor(F32)][32]    # stage_2.blocks.4.bn_a.beta
+        , %para155 : Ref[Tensor(F32)][32]    # stage_2.blocks.4.bn_a.moving_mean
+        , %para156 : Ref[Tensor(F32)][32]    # stage_2.blocks.4.bn_a.moving_variance
+    ) {
+
+#------------------------> 0
+    %1 = FuncGraph::fg_48(%para1)    #(Tensor(F32)[3, 3, 224, 224])    # fg_48=construct.48 #scope: Default
+#[CNode]49
+    Primitive::Return{prim_type=1}(%1)    #(Undefined) #scope: Default
+      # In file D:/file/HW/code/MindSpore/inclearn/convnet/my_resnet.py(333)/        return {/#[CNode]50
+}
+# order:
+#   1: construct_wrapper.1:[CNode]49{[0]: ValueNode<FuncGraph> construct.48, [1]: x}
+#   2: construct_wrapper.1:[CNode]50{[0]: ValueNode<Primitive> Return, [1]: [CNode]49}
+
+
+# [No.2] construct.48
+# In file D:/file/HW/code/MindSpore/inclearn/convnet/my_resnet.py(302)/    def construct(self, x):/
+funcgraph fg_48[fg_1](
+        %para157 : Tensor(F32)[3, 3, 224, 224]    # x
+    ) {
+    %1 : Func = ClassType() #scope: Default
+      # In file D:/file/HW/code/MindSpore/inclearn/convnet/my_resnet.py(304)/        relu = ops.ReLU()/#relu
+    %2 : Tensor(F32)[3, 16, 224, 224] = FuncGraph::fg_51(%para157)    #(Tensor(F32)[3, 3, 224, 224])    # fg_51=construct.51 #scope: Default
+      # In file D:/file/HW/code/MindSpore/inclearn/convnet/my_resnet.py(303)/        x = self.conv_1_3x3(x)  # x:(batch, ch, h, w)/#x
+    %3 : Tensor(F32)[3, 16, 224, 224] = FuncGraph::fg_52(%2)    #(Tensor(F32)[3, 16, 224, 224])    # fg_52=construct.52 #scope: Default
+      # In file D:/file/HW/code/MindSpore/inclearn/convnet/my_resnet.py(305)/        x = relu(self.bn_1(x))/#[CNode]53
+    %4 : Tensor(F32)[3, 16, 224, 224] = %1(%3)    #(Tensor(F32)[3, 16, 224, 224]) #scope: Default
+      # In file D:/file/HW/code/MindSpore/inclearn/convnet/my_resnet.py(305)/        x = relu(self.bn_1(x))/#x
+    %5 : Tuple[List[Tensor(F32)*5],Tensor(F32)] = FuncGraph::fg_54(%4)    #(Tensor(F32)[3, 16, 224, 224])    # fg_54=construct.54 #scope: Default
+      # In file D:/file/HW/code/MindSpore/inclearn/convnet/my_resnet.py(307)/        feats_s1, x = self.stage_1(x)  # x:(batch, 16, h, w)  len of feats_s1: 5, shape: (batch, 16, 224, 224)/#[CNode]55
+    %6 : List[Tensor(F32)*5] = DoSignaturePrimitive::S-Prim-getitem{prim_type=1}(%5, I64(0))    #(Tuple[List[Tensor(F32)*5],Tensor(F32)], I64) #scope: Default
+      # In file D:/file/HW/code/MindSpore/inclearn/convnet/my_resnet.py(307)/        feats_s1, x = self.stage_1(x)  # x:(batch, 16, h, w)  len of feats_s1: 5, shape: (batch, 16, 224, 224)/#feats_s1
+    %7 : I64 = DoSignaturePrimitive::S-Prim-negative{prim_type=1}(I64(1))    #(I64) #scope: Default
+      # In file D:/file/HW/code/MindSpore/inclearn/convnet/my_resnet.py(318)/        attentions = [feats_s1[-1], feats_s2[-1], feats_s3[-1], x]/#[CNode]56
+    %8 : Tensor(F32)[3, 16, 224, 224] = DoSignaturePrimitive::S-Prim-getitem{prim_type=1}(%6, %7)    #(List[Tensor(F32)*5], I64) #scope: Default
+      # In file D:/file/HW/code/MindSpore/inclearn/convnet/my_resnet.py(318)/        attentions = [feats_s1[-1], feats_s2[-1], feats_s3[-1], x]/#[CNode]57
+    %9 : Tensor(F32)[3, 16, 224, 224] = DoSignaturePrimitive::S-Prim-getitem{prim_type=1}(%5, I64(1))    #(Tuple[List[Tensor(F32)*5],Tensor(F32)], I64) #scope: Default
+      # In file D:/file/HW/code/MindSpore/inclearn/convnet/my_resnet.py(307)/        feats_s1, x = self.stage_1(x)  # x:(batch, 16, h, w)  len of feats_s1: 5, shape: (batch, 16, 224, 224)/#x
+    %10 : Tuple[List[Tensor(F32)*5],Tensor(F32)] = FuncGraph::fg_58(%9)    #(Tensor(F32)[3, 16, 224, 224])    # fg_58=construct.58 #scope: Default
+      # In file D:/file/HW/code/MindSpore/inclearn/convnet/my_resnet.py(308)/        feats_s2, x = self.stage_2(x)  # x:(batch, 32, h, w)  len of feats_s2: 5, shape: (batch, 32, 112, 112)/#[CNode]59
+    %11 : List[Tensor(F32)*5] = DoSignaturePrimitive::S-Prim-getitem{prim_type=1}(%10, I64(0))    #(Tuple[List[Tensor(F32)*5],Tensor(F32)], I64) #scope: Default
+      # In file D:/file/HW/code/MindSpore/inclearn/convnet/my_resnet.py(308)/        feats_s2, x = self.stage_2(x)  # x:(batch, 32, h, w)  len of feats_s2: 5, shape: (batch, 32, 112, 112)/#feats_s2
+    %12 : I64 = DoSignaturePrimitive::S-Prim-negative{prim_type=1}(I64(1))    #(I64) #scope: Default
+      # In file D:/file/HW/code/MindSpore/inclearn/convnet/my_resnet.py(318)/        attentions = [feats_s1[-1], feats_s2[-1], feats_s3[-1], x]/#[CNode]60
+    %13 : Tensor(F32)[3, 32, 112, 112] = DoSignaturePrimitive::S-Prim-getitem{prim_type=1}(%11, %12)    #(List[Tensor(F32)*5], I64) #scope: Default
+      # In file D:/file/HW/code/MindSpore/inclearn/convnet/my_resnet.py(318)/        attentions = [feats_s1[-1], feats_s2[-1], feats_s3[-1], x]/#[CNode]61
+    %14 : Tensor(F32)[3, 32, 112, 112] = DoSignaturePrimitive::S-Prim-getitem{prim_type=1}(%10, I64(1))    #(Tuple[List[Tensor(F32)*5],Tensor(F32)], I64) #scope: Default
+      # In file D:/file/HW/code/MindSpore/inclearn/convnet/my_resnet.py(308)/        feats_s2, x = self.stage_2(x)  # x:(batch, 32, h, w)  len of feats_s2: 5, shape: (batch, 32, 112, 112)/#x
+    %15 : Tuple[List[Tensor(F32)*4],Tensor(F32)] = FuncGraph::fg_62(%14)    #(Tensor(F32)[3, 32, 112, 112])    # fg_62=construct.62 #scope: Default
+      # In file D:/file/HW/code/MindSpore/inclearn/convnet/my_resnet.py(309)/        feats_s3, x = self.stage_3(x)  # x:(batch, 64, h, w)  len of feats_s2: 4, shape: (batch, 64, 56, 56)/#[CNode]63
+    %16 : List[Tensor(F32)*4] = DoSignaturePrimitive::S-Prim-getitem{prim_type=1}(%15, I64(0))    #(Tuple[List[Tensor(F32)*4],Tensor(F32)], I64) #scope: Default
+      # In file D:/file/HW/code/MindSpore/inclearn/convnet/my_resnet.py(309)/        feats_s3, x = self.stage_3(x)  # x:(batch, 64, h, w)  len of feats_s2: 4, shape: (batch, 64, 56, 56)/#feats_s3
+    %17 : I64 = DoSignaturePrimitive::S-Prim-negative{prim_type=1}(I64(1))    #(I64) #scope: Default
+      # In file D:/file/HW/code/MindSpore/inclearn/convnet/my_resnet.py(318)/        attentions = [feats_s1[-1], feats_s2[-1], feats_s3[-1], x]/#[CNode]64
+    %18 : Tensor(F32)[3, 64, 56, 56] = DoSignaturePrimitive::S-Prim-getitem{prim_type=1}(%16, %17)    #(List[Tensor(F32)*4], I64) #scope: Default
+      # In file D:/file/HW/code/MindSpore/inclearn/convnet/my_resnet.py(318)/        attentions = [feats_s1[-1], feats_s2[-1], feats_s3[-1], x]/#[CNode]65
+    %19 : Tensor(F32)[3, 64, 56, 56] = DoSignaturePrimitive::S-Prim-getitem{prim_type=1}(%15, I64(1))    #(Tuple[List[Tensor(F32)*4],Tensor(F32)], I64) #scope: Default
+      # In file D:/file/HW/code/MindSpore/inclearn/convnet/my_resnet.py(309)/        feats_s3, x = self.stage_3(x)  # x:(batch, 64, h, w)  len of feats_s2: 4, shape: (batch, 64, 56, 56)/#x
+    %20 : Tensor(F32)[3, 64, 56, 56] = FuncGraph::fg_66(%19)    #(Tensor(F32)[3, 64, 56, 56])    # fg_66=construct.66 #scope: Default
+      # In file D:/file/HW/code/MindSpore/inclearn/convnet/my_resnet.py(310)/        x = self.stage_4(x)  # x:(batch, 64, h/4, w/4)/#x
+    %21 : List[Tensor(F32)*4] = DoSignaturePrimitive::S-Prim-make_list{prim_type=1}(%8, %13, %18, %20)    #(Tensor(F32)[3, 16, 224, 224], Tensor(F32)[3, 32, 112, 112], Tensor(F32)[3, 64, 56, 56], Tensor(F32)[3, 64, 56, 56]) #scope: Default
+      # In file D:/file/HW/code/MindSpore/inclearn/convnet/my_resnet.py(318)/        attentions = [feats_s1[-1], feats_s2[-1], feats_s3[-1], x]/#attentions
+    %22 : Tensor(I32)[1] = DoSignaturePrimitive::S-Prim-Print{prim_type=1}[side_effect_io=Bool(1)](%21)    #(List[Tensor(F32)*4]) #scope: Default
+      # In file D:/file/HW/code/MindSpore/inclearn/convnet/my_resnet.py(320)/        print(attentions)/#[CNode]67
+    %23 : Tuple[String*2] = DoSignaturePrimitive::S-Prim-MakeTuple{prim_type=1}("raw_features", "features")    #(String, String) #scope: Default
+      # In file D:/file/HW/code/MindSpore/inclearn/convnet/my_resnet.py(325)/        aa = {/#[CNode]68
+    %24 : Tensor(F32)[3, 64] = FuncGraph::fg_47(%20)    #(Tensor(F32)[3, 64, 56, 56])    # fg_47=end_features.47 #scope: Default
+      # In file D:/file/HW/code/MindSpore/inclearn/convnet/my_resnet.py(312)/        raw_features = self.end_features(x)/#raw_features
+    %25 : Tensor(F32)[3, 64, 56, 56] = %1(%20)    #(Tensor(F32)[3, 64, 56, 56]) #scope: Default
+      # In file D:/file/HW/code/MindSpore/inclearn/convnet/my_resnet.py(313)/        features = self.end_features(relu(x))/#[CNode]69
+    %26 : Tensor(F32)[3, 64] = FuncGraph::fg_47(%25)    #(Tensor(F32)[3, 64, 56, 56])    # fg_47=end_features.47 #scope: Default
+      # In file D:/file/HW/code/MindSpore/inclearn/convnet/my_resnet.py(313)/        features = self.end_features(relu(x))/#features
+    %27 : Tuple[Tensor(F32)*2] = DoSignaturePrimitive::S-Prim-MakeTuple{prim_type=1}(%24, %26)    #(Tensor(F32)[3, 64], Tensor(F32)[3, 64]) #scope: Default
+      # In file D:/file/HW/code/MindSpore/inclearn/convnet/my_resnet.py(325)/        aa = {/#[CNode]70
+    %28 : Dictionary[[raw_features,features,],[Tensor[Float32]*2]] = DoSignaturePrimitive::S-Prim-make_dict{prim_type=1}(%23, %27)    #(Tuple[String*2], Tuple[Tensor(F32)*2]) #scope: Default
+      # In file D:/file/HW/code/MindSpore/inclearn/convnet/my_resnet.py(325)/        aa = {/#aa
+
+#------------------------> 1
+    %29 = DoSignaturePrimitive::S-Prim-Print{prim_type=1}[side_effect_io=Bool(1)](%28)    #(Dictionary[[raw_features,features,],[Tensor[Float32]*2]]) #scope: Default
+      # In file D:/file/HW/code/MindSpore/inclearn/convnet/my_resnet.py(331)/        print(aa)/#[CNode]71
+    %30 = Primitive::MakeTuple{prim_type=1}(%22, %29)    #(Tensor(I32)[1], Undefined) #scope: Default
+#[CNode]72
+    %31 = Primitive::stop_gradient{prim_type=1}(%30)    #(Undefined) #scope: Default
+#[CNode]73
+    %32 = DoSignaturePrimitive::S-Prim-MakeTuple{prim_type=1}("raw_features", "features", "attention")    #(Undefined, Undefined, Undefined) #scope: Default
+      # In file D:/file/HW/code/MindSpore/inclearn/convnet/my_resnet.py(333)/        return {/#[CNode]74
+    %33 = DoSignaturePrimitive::S-Prim-MakeTuple{prim_type=1}(%24, %26, %21)    #(Tensor(F32)[3, 64], Tensor(F32)[3, 64], List[Tensor(F32)*4]) #scope: Default
+      # In file D:/file/HW/code/MindSpore/inclearn/convnet/my_resnet.py(333)/        return {/#[CNode]75
+    %34 = DoSignaturePrimitive::S-Prim-make_dict{prim_type=1}(%32, %33)    #(Undefined, Undefined) #scope: Default
+      # In file D:/file/HW/code/MindSpore/inclearn/convnet/my_resnet.py(333)/        return {/#[CNode]76
+    %35 = Primitive::Depend{prim_type=1}[side_effect_propagate=I64(1)](%34, %31)    #(Undefined, Undefined) #scope: Default
+#[CNode]77
+    Primitive::Return{prim_type=1}(%35)    #(Undefined) #scope: Default
+      # In file D:/file/HW/code/MindSpore/inclearn/convnet/my_resnet.py(333)/        return {/#[CNode]78
+}
+# order:
+#   1: construct.48:x{[0]: ValueNode<FuncGraph> construct.51, [1]: x}
+#   2: construct.48:relu{[0]: ValueNode<ClassType> class 'mindspore.ops.operations.nn_ops.ReLU'}
+#   3: construct.48:[CNode]53{[0]: ValueNode<FuncGraph> construct.52, [1]: x}
+#   4: construct.48:x{[0]: relu, [1]: [CNode]53}
+#   5: construct.48:[CNode]55{[0]: ValueNode<FuncGraph> construct.54, [1]: x}
+#   6: construct.48:feats_s1{[0]: ValueNode<DoSignaturePrimitive> S-Prim-getitem, [1]: [CNode]55, [2]: ValueNode<Int64Imm> 0}
+#   7: construct.48:x{[0]: ValueNode<DoSignaturePrimitive> S-Prim-getitem, [1]: [CNode]55, [2]: ValueNode<Int64Imm> 1}
+#   8: construct.48:[CNode]59{[0]: ValueNode<FuncGraph> construct.58, [1]: x}
+#   9: construct.48:feats_s2{[0]: ValueNode<DoSignaturePrimitive> S-Prim-getitem, [1]: [CNode]59, [2]: ValueNode<Int64Imm> 0}
+#  10: construct.48:x{[0]: ValueNode<DoSignaturePrimitive> S-Prim-getitem, [1]: [CNode]59, [2]: ValueNode<Int64Imm> 1}
+#  11: construct.48:[CNode]63{[0]: ValueNode<FuncGraph> construct.62, [1]: x}
+#  12: construct.48:feats_s3{[0]: ValueNode<DoSignaturePrimitive> S-Prim-getitem, [1]: [CNode]63, [2]: ValueNode<Int64Imm> 0}
+#  13: construct.48:x{[0]: ValueNode<DoSignaturePrimitive> S-Prim-getitem, [1]: [CNode]63, [2]: ValueNode<Int64Imm> 1}
+#  14: construct.48:x{[0]: ValueNode<FuncGraph> construct.66, [1]: x}
+#  15: construct.48:raw_features{[0]: ValueNode<FuncGraph> end_features.47, [1]: x}
+#  16: construct.48:[CNode]69{[0]: relu, [1]: x}
+#  17: construct.48:features{[0]: ValueNode<FuncGraph> end_features.47, [1]: [CNode]69}
+#  18: construct.48:[CNode]56{[0]: ValueNode<DoSignaturePrimitive> S-Prim-negative, [1]: ValueNode<Int64Imm> 1}
+#  19: construct.48:[CNode]57{[0]: ValueNode<DoSignaturePrimitive> S-Prim-getitem, [1]: feats_s1, [2]: [CNode]56}
+#  20: construct.48:[CNode]60{[0]: ValueNode<DoSignaturePrimitive> S-Prim-negative, [1]: ValueNode<Int64Imm> 1}
+#  21: construct.48:[CNode]61{[0]: ValueNode<DoSignaturePrimitive> S-Prim-getitem, [1]: feats_s2, [2]: [CNode]60}
+#  22: construct.48:[CNode]64{[0]: ValueNode<DoSignaturePrimitive> S-Prim-negative, [1]: ValueNode<Int64Imm> 1}
+#  23: construct.48:[CNode]65{[0]: ValueNode<DoSignaturePrimitive> S-Prim-getitem, [1]: feats_s3, [2]: [CNode]64}
+#  24: construct.48:attentions{[0]: ValueNode<DoSignaturePrimitive> S-Prim-make_list, [1]: [CNode]57, [2]: [CNode]61, [3]: [CNode]65, [4]: x}
+#  25: construct.48:[CNode]67{[0]: ValueNode<DoSignaturePrimitive> S-Prim-Print, [1]: attentions}
+#  26: construct.48:[CNode]68{[0]: ValueNode<DoSignaturePrimitive> S-Prim-MakeTuple, [1]: ValueNode<StringImm> raw_features, [2]: ValueNode<StringImm> features}
+#  27: construct.48:[CNode]70{[0]: ValueNode<DoSignaturePrimitive> S-Prim-MakeTuple, [1]: raw_features, [2]: features}
+#  28: construct.48:aa{[0]: ValueNode<DoSignaturePrimitive> S-Prim-make_dict, [1]: [CNode]68, [2]: [CNode]70}
+#  29: construct.48:[CNode]71{[0]: ValueNode<DoSignaturePrimitive> S-Prim-Print, [1]: aa}
+#  30: construct.48:[CNode]74{[0]: ValueNode<DoSignaturePrimitive> S-Prim-MakeTuple, [1]: ValueNode<StringImm> raw_features, [2]: ValueNode<StringImm> features, [3]: ValueNode<StringImm> attention}
+#  31: construct.48:[CNode]75{[0]: ValueNode<DoSignaturePrimitive> S-Prim-MakeTuple, [1]: raw_features, [2]: features, [3]: attentions}
+#  32: construct.48:[CNode]76{[0]: ValueNode<DoSignaturePrimitive> S-Prim-make_dict, [1]: [CNode]74, [2]: [CNode]75}
+#  33: construct.48:[CNode]78{[0]: ValueNode<Primitive> Return, [1]: [CNode]77}
+
+
+#===============================================================================
+# num of function graphs in stack: 2/3 (Ignored 1 internal frames).

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SshConfigs">
+    <configs>
+      <sshConfig authType="PASSWORD" connectionConfig="{&quot;serverAliveInterval&quot;:300}" host="192.168.88.9" id="be1020b6-f3a9-4bca-85b0-a962c8c96b77" port="22" customName="mindspore" nameFormat="CUSTOM" username="mindspore" useOpenSSHConfig="true">
+        <option name="customName" value="mindspore" />
+      </sshConfig>
+    </configs>
+  </component>
+</project>

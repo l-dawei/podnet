@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="aa9bd393-f830-4efb-bdd2-ca2137cadc9a" name="mindspore">
+        <fileTransfer rootFolder="/ldw/podnet2" accessType="SFTP" host="192.168.88.9" port="22" sshConfigId="be1020b6-f3a9-4bca-85b0-a962c8c96b77" sshConfig="mindspore">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
